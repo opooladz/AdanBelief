@@ -3,7 +3,7 @@ import torch
 from torch.optim.optimizer import Optimizer
 
 
-class AdanBelif(Optimizer):
+class AdanBelief(Optimizer):
     """
     Mostly for my use.
     Implements a pytorch variant of Adan
@@ -58,10 +58,10 @@ class AdanBelif(Optimizer):
         defaults = dict(lr=lr, betas=betas, eps=eps,
                         weight_decay=weight_decay,
                         max_grad_norm=max_grad_norm, no_prox=no_prox)
-        super(Adan, self).__init__(params, defaults)
+        super(AdanBelief, self).__init__(params, defaults)
 
     def __setstate__(self, state):
-        super(Adan, self).__setstate__(state)
+        super(AdanBelief, self).__setstate__(state)
         for group in self.param_groups:
             group.setdefault('no_prox', False)
 
